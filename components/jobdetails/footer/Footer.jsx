@@ -1,7 +1,7 @@
-import { View, Text, TouchableOpacity, Image, Linking } from "react-native";
+import { Image, Linking, Text, TouchableOpacity, View } from "react-native";
 
-import styles from "./footer.style";
 import { icons } from "../../../constants";
+import styles from "./footer.style";
 
 const Footer = ({ url }) => {
   return (
@@ -9,7 +9,7 @@ const Footer = ({ url }) => {
       <TouchableOpacity style={styles.likeBtn}>
         <Image
           source={icons.heartOutline}
-          resizeMode='contain'
+          resizeMode="contain"
           style={styles.likeBtnImage}
         />
       </TouchableOpacity>
