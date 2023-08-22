@@ -1,8 +1,8 @@
-import React, { useState } from "react";
-import { TouchableOpacity, FlatList, Text, View } from "react-native";
+import React from "react";
+import { FlatList, Text, TouchableOpacity, View } from "react-native";
 
-import styles from "./tabs.style";
 import { SIZES } from "../../../constants";
+import styles from "./tabs.style";
 
 function TabButton({ name, activeTab, onHandleSearchType }) {
   return (
@@ -20,8 +20,6 @@ const Tabs = ({ tabs, activeTab, setActiveTab }) => {
     <View style={styles.container}>
       <FlatList
         data={tabs}
-        horizontal
-        showsHorizontalScrollIndicator={false}
         renderItem={({ item }) => (
           <TabButton
             name={item}
@@ -29,8 +27,10 @@ const Tabs = ({ tabs, activeTab, setActiveTab }) => {
             onHandleSearchType={() => setActiveTab(item)}
           />
         )}
-        contentContainerStyle={{ columnGap: SIZES.small / 2 }}
+        horizontal
+        showsHorizontalScrollIndicator={false}
         keyExtractor={(item) => item}
+        contentContainerStyle={{ columnGap: SIZES.small / 2 }}
       />
     </View>
   );

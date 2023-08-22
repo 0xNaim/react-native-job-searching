@@ -1,9 +1,9 @@
 import React from "react";
-import { View, Text, Image } from "react-native";
-
-import styles from "./company.style";
+import { Image, Text, View } from "react-native";
 import { icons } from "../../../constants";
+
 import { checkImageURL } from "../../../utils";
+import styles from "./company.style";
 
 const Company = ({ companyLogo, jobTitle, companyName, location }) => {
   return (
@@ -28,7 +28,7 @@ const Company = ({ companyLogo, jobTitle, companyName, location }) => {
         <View style={styles.locationBox}>
           <Image
             source={icons.location}
-            resizeMode='contain'
+            resizeMode="contain"
             style={styles.locationImage}
           />
           <Text style={styles.locationName}>{location}</Text>
